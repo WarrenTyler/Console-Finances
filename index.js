@@ -115,13 +115,15 @@ let greatestIncrease = finances[0];
 let greatestDecrease = finances[0];
 // iterate over one less month
 for (let i = 0; i < finances.length - 1; i++) {
-  const curPreMonthChange = finances[i + 1][1] - finances[i][1];
+  const curMonth = finances[i + 1];
+  const preMonth = finances[i];
+  const curPreMonthChange = curMonth[1] - preMonth[1];
   totalChange += curPreMonthChange;
   if(greatestIncrease[1] < curPreMonthChange) {
-    greatestIncrease = [finances[i + 1][0], curPreMonthChange];
+    greatestIncrease = [curMonth[0], curPreMonthChange];
   }
   else if(greatestDecrease[1] > curPreMonthChange) {
-    greatestDecrease = [finances[i + 1][0], curPreMonthChange];
+    greatestDecrease = [curMonth[0], curPreMonthChange];
   }
 }
 
