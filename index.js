@@ -88,24 +88,16 @@ const finances = [
 ];
 
 
-
-// ------------------------------------ //
-console.log("Financial Analysis");
-console.log("------------------");
-
 // The total number of months included in the dataset
 const totalNumOfMonths = finances.length;
-console.log(`Total Months: ${totalNumOfMonths}`);
-
-
 // The net total amount of Profit/Losses over the entire period
-let totalProfit = finances[0][1];
+let totalProfit = finances[0][1]; // initialise to include first month profit
 // The average of the changes in Profit/Losses over the entire period.
-let totalChange = finances[0][1];
+let totalChange = finances[0][1]; // initialise to include first month profit
 
+let greatestIncrease = finances[0]; // initialise to first month 
+let greatestDecrease = finances[0]; // initialise to first month
 
-let greatestIncrease = finances[0];
-let greatestDecrease = finances[0];
 // iterate over one less month
 for (let i = 0; i < finances.length - 1; i++) {
   const curMonth = finances[i + 1];
@@ -121,6 +113,10 @@ for (let i = 0; i < finances.length - 1; i++) {
   totalProfit += curMonth[1];
 }
 
+// log calculations to console
+console.log("Financial Analysis");
+console.log("------------------");
+console.log(`Total Months: ${totalNumOfMonths}`);
 console.log(`Total: $${totalProfit.toFixed(2)}`);
 console.log(`Average Change: $${(totalChange / totalNumOfMonths).toFixed(2)}`);
 console.log(`Greatest Increase in Profits: ${greatestIncrease[0]} ($${greatestIncrease[1].toFixed(2)})`);
