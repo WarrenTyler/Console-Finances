@@ -110,19 +110,11 @@ console.log(`Total: $${totalProfit}`);
 // The average of the changes in Profit/Losses over the entire period.
 let totalChange = 0;
 
-// iterate over one less month
-for (let i = 0; i < finances.length - 1; i++) {
-  const curPreMonthChange = finances[i + 1][1] - finances[i][1];
-  totalChange += curPreMonthChange;
-}
-
-console.log(`Average Change: $${totalChange / (totalNumOfMonths - 1)}`);
 
 let greatestIncrease = finances[0];
 let greatestDecrease = finances[0];
 // iterate over one less month
 for (let i = 0; i < finances.length - 1; i++) {
-  const [month, profit] = finances[i];
   const curPreMonthChange = finances[i + 1][1] - finances[i][1];
   totalChange += curPreMonthChange;
   if(greatestIncrease[1] < curPreMonthChange) {
@@ -133,5 +125,6 @@ for (let i = 0; i < finances.length - 1; i++) {
   }
 }
 
+console.log(`Average Change: $${totalChange / (totalNumOfMonths - 1)}`);
 console.log(`Greatest Increase in Profits: $${greatestIncrease}`);
 console.log(`Greatest Decrease in Profits: $${greatestDecrease}`);
