@@ -95,4 +95,14 @@ console.log("-------------------");
 
 // The total number of months included in the dataset
 const totalNumOfMonths = finances.length;
-console.log(totalNumOfMonths);
+console.log(`Total Months: ${totalNumOfMonths}`);
+
+// The net total amount of Profit/Losses over the entire period
+let totalProfit = 0;
+
+for (let i = 0; i < finances.length; i++) {
+  const [month, profit] = finances[i];
+  totalProfit += profit;
+}
+
+console.log(`Total: $${totalProfit}`);
