@@ -108,7 +108,7 @@ for (let i = 0; i < finances.length; i++) {
 console.log(`Total: $${totalProfit}`);
 
 // The average of the changes in Profit/Losses over the entire period.
-let totalChange = 0;
+let totalChange = finances[0][1];
 
 
 let greatestIncrease = finances[0];
@@ -125,6 +125,6 @@ for (let i = 0; i < finances.length - 1; i++) {
   }
 }
 
-console.log(`Average Change: $${totalChange / (totalNumOfMonths - 1)}`);
+console.log(`Average Change: $${totalChange / totalNumOfMonths}`);
 console.log(`Greatest Increase in Profits: $${greatestIncrease}`);
 console.log(`Greatest Decrease in Profits: $${greatestDecrease}`);
