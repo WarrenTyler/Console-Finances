@@ -1,4 +1,4 @@
-var finances = [
+const finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -106,3 +106,14 @@ for (let i = 0; i < finances.length; i++) {
 }
 
 console.log(`Total: $${totalProfit}`);
+
+// The average of the changes in Profit/Losses over the entire period.
+let totalChange = 0;
+// iterate over one less month
+for (let i = 0; i < finances.length - 1; i++) {
+  const [month, profit] = finances[i];
+  const curPreMonthChange = finances[i + 1][1] - finances[i][1];
+  totalChange += curPreMonthChange;
+}
+
+console.log(`Average Change: $${totalChange / (totalNumOfMonths - 1)}`);
