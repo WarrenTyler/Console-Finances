@@ -12,7 +12,7 @@ N/A
 
 This appliction uses the console to log the required output. To view the output you must open the developer tools console window.
 
-![Original layout](assets/images/01-html-css-git-challenge-demo.png)
+![ScreenShot](assets/capture.png)
 
 View deployed application: 
 [Console Finances](https://warrentyler.github.io/Console-Finances/)
