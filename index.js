@@ -105,7 +105,7 @@ for (let i = 0; i < finances.length; i++) {
   totalProfit += profit;
 }
 
-console.log(`Total: $${totalProfit}`);
+console.log(`Total: $${totalProfit.toFixed(2)}`);
 
 // The average of the changes in Profit/Losses over the entire period.
 let totalChange = finances[0][1];
@@ -125,6 +125,6 @@ for (let i = 0; i < finances.length - 1; i++) {
   }
 }
 
-console.log(`Average Change: $${totalChange / totalNumOfMonths}`);
-console.log(`Greatest Increase in Profits: $${greatestIncrease}`);
-console.log(`Greatest Decrease in Profits: $${greatestDecrease}`);
+console.log(`Average Change: $${(totalChange / totalNumOfMonths).toFixed(2)}`);
+console.log(`Greatest Increase in Profits: ${greatestIncrease[0]} ($${greatestIncrease[1].toFixed(2)})`);
+console.log(`Greatest Decrease in Profits: ${greatestDecrease[0]} ($${greatestDecrease[1].toFixed(2)})`);
